@@ -1,0 +1,78 @@
+/* 
+TIPS TO MAKE IT RESPONSIVE TAKEN FROM:
+http://thenewcode.com/744/Make-SVG-Responsive 
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+}
+
+h1 {
+    padding: 2% 0;
+    font-size: 1.5em;
+}
+
+#rotor-derecho, #rotor-izquierdo {
+    animation: rotores 1s linear infinite alternate;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+#chasis-drone {
+    animation: drone infinite ease-in-out 1s alternate;
+    transform-origin: center;
+}
+
+#pro-camara {
+    animation: camara infinite ease-in-out 1s alternate;
+    transform-origin: center;
+}
+
+.svg-container { 
+	display: inline-block;
+	position: relative;
+	width: 60%;
+	padding-bottom: 80%; 
+	vertical-align: middle; 
+	overflow: hidden; 
+}
+
+.svg-content { 
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+@keyframes rotores {
+    from {
+        transform: rotateY(0deg) translateY(-40%);
+    }
+    to {
+        transform: rotateY(3000deg) translateY(10%);
+    }
+}
+
+@keyframes drone {
+    from {
+        transform: rotateX(0deg) translateY(-2%);
+    }
+    to {
+        transform: rotateX(10deg) translateY(0%);
+    }
+}
+
+@keyframes camara {
+    from {
+        transform: translateY(-1.5%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
